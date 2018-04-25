@@ -1,6 +1,5 @@
 public class Mapa{
 	
-	/*public Casilla[][] casillas;*/
 	private Casilla[][] casillas;
 
 	public Mapa(int rows, int cols){

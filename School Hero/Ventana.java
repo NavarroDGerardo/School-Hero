@@ -13,17 +13,18 @@ public class Ventana extends JFrame{
 	/*Variables initComponentsPantallaPrincipal*/
 	private JPanel panelHistoria, panelMapa, panelBotones, panelStats, panelContenedorMapa;
 	private JButton bFlechaArriba, bFlechaDerecha, bFlechaIzquierda, bFlechaAbajo, bInventario;
-	private JLabel lExperience, lPromedio, lDefensa, lAtaque;
+	private JLabel lExperience, lPromedio, lDefensa, lAtaque, lNumeroDeMobsAsesinados;
 	private Mapa mapa;
 	private Alumno alumno;
 
 	/*Variables label para los stats*/
-	private JLabel labelNombre, labelPromedio, labelAtaque, labelDefensa, labelXP;
+	private JLabel labelNombre, labelPromedio, labelAtaque, labelDefensa, labelXP, labelNumeroDeMobsAsesinados;
 
 	public Ventana(){
 		super("VideoGame");
 		mapa= new Mapa(20,20);
-		alumno= new Alumno("Gerardo", 5, 5, 1, 2, 3, 4);
+		/*nombre, x, y, promedio, ataque, defensa, xP, numero de mobs asesinados*/
+		alumno= new Alumno("Gerardo", 5, 5, 100, 10, 1, 1, 1);
 		crearMapa();
 		initComponentsPantallaInicio();
 		setLayout(new GridLayout(2,2));
@@ -98,9 +99,10 @@ public class Ventana extends JFrame{
 		labelAtaque= new JLabel();
 		labelDefensa= new JLabel();
 		labelXP= new JLabel();
+		labelNumeroDeMobsAsesinados=new JLabel();
 
 		panelStats=new JPanel();
-		panelStats.setLayout(new GridLayout(5,5));
+		panelStats.setLayout(new GridLayout(7,5));
 		
 		panelStats.add(new JLabel(""));
 		panelStats.add(new JLabel(""));
@@ -144,6 +146,18 @@ public class Ventana extends JFrame{
 		labelXP.setText(xPStr);
 		panelStats.add(labelXP);
 		panelStats.add(new JLabel(""));
+
+		lNumeroDeMobsAsesinados=new JLabel("# de tareas cumplidas: ");
+		panelStats.add(new JLabel(""));
+		panelStats.add(lNumeroDeMobsAsesinados);
+		panelStats.add(new JLabel(""));
+		String numeroStr = String.valueOf(alumno.getNumeroDeMobsAsesinados());
+		labelNumeroDeMobsAsesinados.setText(numeroStr);
+		panelStats.add(labelNumeroDeMobsAsesinados);
+		panelStats.add(new JLabel(""));
+
+
+
 
 		add(panelStats);
 	}
@@ -220,7 +234,7 @@ public class Ventana extends JFrame{
 
 	public class BotonAbajoListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			if(alumno.getX()<=10){
+			if(alumno.getX()<=18){
 				mapa.getCasillas()[alumno.getX()][alumno.getY()].setAlumno(null);
 				alumno.setX(alumno.getX()+1);
 
@@ -237,7 +251,7 @@ public class Ventana extends JFrame{
 
 	public class BotonDerechaListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			if(alumno.getY()<=10){
+			if(alumno.getY()<=18){
 				mapa.getCasillas()[alumno.getX()][alumno.getY()].setAlumno(null);
 				alumno.setY(alumno.getY()+1);
 
@@ -254,7 +268,7 @@ public class Ventana extends JFrame{
 
 	public class BotonInventarioListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
-			
+
 		}
 	}
 

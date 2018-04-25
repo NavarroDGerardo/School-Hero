@@ -10,8 +10,9 @@ public class Alumno{
 	private int defensa;
 	private int ataque;
 	private int xP;
+	private int numeroDeMobsAsesinados;
 
-	public Alumno(String nombre, int x, int y, int promedio, int ataque, int defensa, int xP){
+	public Alumno(String nombre, int x, int y, int promedio, int ataque, int defensa, int xP, int numeroDeMobsAsesinados){
 		this.nombre=nombre;
 		this.x=x;
 		this.y=y;
@@ -19,6 +20,7 @@ public class Alumno{
 		this.defensa=defensa;
 		this.ataque=ataque;
 		this.xP=xP;
+		this.numeroDeMobsAsesinados=numeroDeMobsAsesinados;
 	}
 
 	/*Set y Get de Nombre*/
@@ -89,5 +91,15 @@ public class Alumno{
 
 	public int getXP(){
 		return xP;
+	}
+
+	/*set y get de numeroDeMobsAsesinados*/
+
+	public void setNumeroDeMobsAsesinados(int numeroDeMobsAsesinados){
+		this.numeroDeMobsAsesinados=numeroDeMobsAsesinados;
+	}
+
+	public int getNumeroDeMobsAsesinados(){
+		return numeroDeMobsAsesinados;
 	}
 }
