@@ -1,4 +1,4 @@
-public abstract class Mob /*implements ActionMob*/{
+public abstract class Mob implements ActionMob{
 	
 	private int promedio;
 	private int defensa;
