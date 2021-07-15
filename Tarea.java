@@ -1,7 +1,9 @@
-public class Tarea extends Enemigo{
+import java.io.Serializable;
 
-	public Tarea(int promedio, int defensa, int ataque){
-		super(promedio, defensa, ataque);
+public class Tarea extends Enemigo implements Serializable{
+
+	public Tarea(int x, int y, int promedio, int ataque, int defensa){
+		super(x, y, promedio, ataque, defensa);
 	}
 
 	public void atacar(Mob mob){

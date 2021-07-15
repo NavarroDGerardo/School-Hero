@@ -1,4 +1,6 @@
-public abstract class Alumno extends Mob{
+import java.io.Serializable;
+
+public abstract class Alumno extends Mob implements Serializable{
 
 	private String nombre;
 	private int x;
@@ -47,7 +49,7 @@ public abstract class Alumno extends Mob{
 
 	/*Set y Get de xP*/
 
-	public void setXP(int defensa){
+	public void setXP(int xP){
 		this.xP=xP;
 	}
 

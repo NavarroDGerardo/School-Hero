@@ -1,4 +1,6 @@
-public class Mapa{
+import java.io.Serializable;
+
+public class Mapa implements Serializable{
 	
 	private Casilla[][] casillas;
 
